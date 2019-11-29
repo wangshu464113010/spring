@@ -24,8 +24,8 @@ public class Test {
 		b.println();
 		/**
 		 * NamedBeanHolder nbh  = new NamedBeanHolder("A",new A());
-		Object beanInstance = nbh.getBeanInstance();
-		System.out.println(beanInstance);
+		 Object beanInstance = nbh.getBeanInstance();
+		 System.out.println(beanInstance);
 		 ***/
 		System.out.println("end--->--------------------------------------->");
 	}
