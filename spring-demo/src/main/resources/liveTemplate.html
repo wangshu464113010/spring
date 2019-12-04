@@ -1,0 +1,403 @@
+
+<html>
+<head>
+	<meta charset="utf-8"/>
+</head>
+<body>
+<div class="table-box"><table border="1" cellspacing="0"><tbody><tr><td>
+			<p ><strong>作用</strong></p>
+			</td>
+			<td >
+			<p ><strong>描述</strong></p>
+			</td>
+		</tr><tr><td>
+			<p ><strong><span>annotated("annotation qname")</span></strong></p>
+			</td>
+			<td >
+			<p ><span >使用驻留在指定位置的注释创建类型符号。</span><br><span >例如，请参见迭代组中的活动模板。</span></p>
+			</td>
+		</tr><tr><td>
+			<p ><strong><span>anonymousSuper()</span></strong></p>
+			</td>
+			<td >
+			<p ><span >为</span><span >Kotlin</span><span >对象表达式建议一个超类型。</span></p>
+			</td>
+		</tr><tr><td>
+			<p ><strong><span>arrayVariable()</span></strong></p>
+			</td>
+			<td >
+			<p ><span >建议当前作用域中适用的所有数组变量。</span><br><span >例如，请参见迭代组中的活动模板。</span></p>
+			</td>
+		</tr><tr><td>
+			<p ><strong><span>blockCommentEnd</span></strong></p>
+			</td>
+			<td >
+			<p ><span >返回在当前语言上下文中指示块注释结束的字符。</span></p>
+			</td>
+		</tr><tr><td>
+			<p ><strong><span>blockCommentStart</span></strong></p>
+			</td>
+			<td >
+			<p ><span >返回在当前语言上下文中指示块注释开始的字符。</span></p>
+			</td>
+		</tr><tr><td>
+			<p ><strong><span>camelCase(String)</span></strong></p>
+			</td>
+			<td >
+			<p ><span >将字符串转换为</span><span >camelCase</span><span >。</span><br><span >例如，</span><span >camelCase(my-text-file)</span><span >、</span><span >camelCase(my text file)</span><span >和</span><span >camelCase(my_text_file)</span><span >都返回</span><span >myTextFile</span><span >。</span></p>
+			</td>
+		</tr><tr><td>
+			<p ><strong><span>capitalize(String)</span></strong></p>
+			</td>
+			<td >
+			<p ><span >将参数的第一个字母大写。</span></p>
+			</td>
+		</tr><tr><td >
+			<p ><strong><span>capitalizeAndUnderscore(sCamelCaseName)</span></strong></p>
+			</td>
+			<td >
+			<p ><span >将作为参数传递的</span><span >CamelCase</span><span >名称的所有字母大写，并在各部分之间插入下划线。</span>例如，大写和下划线<span >(FooBar)</span><span >返回</span><span >FOO_BAR</span><span >。</span></p>
+			</td>
+		</tr><tr><td >
+			<p ><strong><span>castToLeftSideType()</span></strong></p>
+			</td>
+			<td >
+			<p ><span >将右侧表达式转换为左侧表达式类型。</span>在迭代组中，它使用一个模板来生成<span >raw</span><span >类型和泛型集合。</span></p>
+			</td>
+		</tr><tr><td >
+			<p ><strong><span>className()</span></strong></p>
+			</td>
+			<td >
+			<p ><span >返回当前类的名称</span><span >(</span><span >展开模板的类</span><span >)</span><span >。</span></p>
+			</td>
+		</tr><tr><td >
+			<p ><strong><span>classNameComplete()</span></strong></p>
+			</td>
+			<td >
+			<p ><span >这个表达式替代了变量位置上的类名补全。</span></p>
+			</td>
+		</tr><tr><td >
+			<p ><strong><span>clipboard()</span></strong></p>
+			</td>
+			<td >
+			<p ><span>返回系统剪贴板的内容。</span></p>
+			</td>
+		</tr><tr><td >
+			<p ><strong><span>commentEnd()</span></strong></p>
+			</td>
+			<td >
+			<p ><span>返回指示当前语言上下文中注释结尾的字符。如果行注释是用当前语言定义的，则返回值为空。</span></p>
+			</td>
+		</tr><tr><td >
+			<p ><strong><span>commentStart()</span></strong></p>
+			</td>
+			<td >
+			<p ><span>返回指示当前语言上下文中注释开头的字符。如果行注释是用当前语言定义的，则它们的开始指示符更好。</span></p>
+			</td>
+		</tr><tr><td >
+			<p ><strong><span>complete()</span></strong></p>
+			</td>
+			<td >
+			<p ><span>在变量的位置调用代码完成。</span></p>
+			</td>
+		</tr><tr><td >
+			<p ><strong><span>completeSmart()</span></strong></p>
+			</td>
+			<td >
+			<p ><span>在变量的位置调用智能类型完成。</span></p>
+			</td>
+		</tr><tr><td >
+			<p ><strong><span>componentTypeOf(&lt;array&gt;)</span></strong></p>
+			</td>
+			<td >
+			<p ><span>返回数组的组件类型。有关示例，请参见迭代组和其他组中的活动模板。</span></p>
+			</td>
+		</tr><tr><td >
+			<p ><strong><span>concat(expressions...)</span></strong></p>
+			</td>
+			<td >
+			<p ><span>返回作为参数传递给函数的所有字符串的串联。</span></p>
+			</td>
+		</tr><tr><td >
+			<p ><strong><span>currentPackage()</span></strong></p>
+			</td>
+			<td >
+			<p ><span>返回当前包名称。</span></p>
+			</td>
+		</tr><tr><td >
+			<p ><strong><span>date(sDate)</span></strong></p>
+			</td>
+			<td >
+			<p ><span>如果没有参数，则以默认系统格式返回当前日期。</span></p>
+			</td>
+		</tr><tr><td >
+			<p ><strong><span>decapitalize(sName)</span></strong></p>
+			</td>
+			<td >
+			<p ><span>将参数的第一个字母替换为相应的小写字母。</span></p>
+			</td>
+		</tr><tr><td >
+			<p ><strong><span>descendantClassEnum(&lt;String&gt;)</span></strong></p>
+			</td>
+			<td >
+			<p ><span>返回指定为字符串参数的类的子级。</span></p>
+			</td>
+		</tr><tr><td >
+			<p ><strong><span>enum(sCompletionString1,sCompletionString2,...)</span></strong></p>
+			</td>
+			<td >
+			<p ><span>返回在扩展模板时建议完成的逗号分隔字符串列表。</span></p>
+			</td>
+		</tr><tr><td >
+			<p ><strong><span>escapeString(sEscapeString)</span></strong></p>
+			</td>
+			<td >
+			<p ><span>转义指定为参数的字符串。</span></p>
+			</td>
+		</tr><tr><td >
+			<p ><strong><span>expectedType()</span></strong></p>
+			</td>
+			<td >
+			<p ><span>返回模板扩展到的表达式的预期类型。如果模板在赋值的右部分、返回后等展开，则很有意义。</span></p>
+			</td>
+		</tr><tr><td >
+			<p ><strong><span>fileName()</span></strong></p>
+			</td>
+			<td >
+			<p ><span>返回当前文件的名称及其扩展名。</span></p>
+			</td>
+		</tr><tr><td >
+			<p ><strong><span>fileNameWithoutExtension()</span></strong></p>
+			</td>
+			<td >
+			<p ><span>返回不带扩展名的当前文件的名称。</span></p>
+			</td>
+		</tr><tr><td >
+			<p ><strong><span>firstWord(sFirstWord)</span></strong></p>
+			</td>
+			<td >
+			<p ><span>返回作为参数传递的字符串的第一个字。</span></p>
+			</td>
+		</tr><tr><td >
+			<p ><strong><span>groovyScript("groovy code", arg1)</span></strong></p>
+			</td>
+			<td >
+			<p ><span>返回具有指定代码的</span><span>groovy</span><span>脚本。</span></p>
+
+			<p >&nbsp;</p>
+
+			<p ><span>可以将</span><span>groovyscript</span><span>（）函数与多个参数一起使用。第一个参数是所执行脚本的文本或包含脚本的文件的路径。下一个参数绑定到脚本中可用的</span><span>_1</span><span>、</span><span>_2</span><span>、</span><span>_3</span><span>、</span><span>…_n</span><span>变量。此外，脚本中还提供了</span><span>_editor</span><span>变量。此变量绑定到当前编辑器。</span></p>
+			</td>
+		</tr><tr><td >
+			<p ><strong><span>guessElementType (&lt;container&gt;)</span></strong></p>
+			</td>
+			<td >
+			<p ><span>猜测</span><span>java.util.collection</span><span>中存储的元素类型。为了猜测，</span><span>intellij</span><span>想法试图找到元素添加到容器或从容器中提取的位置。</span></p>
+			</td>
+		</tr><tr><td >
+			<p ><strong><span>iterableComponentType(&lt;ArrayOrIterable&gt;)</span></strong></p>
+			</td>
+			<td >
+			<p ><span>返回可</span><span>iterable</span><span>组件的类型，如数组或集合。</span></p>
+			</td>
+		</tr><tr><td >
+			<p ><strong><span>iterableVariable()</span></strong></p>
+			</td>
+			<td >
+			<p ><span>返回可迭代的变量的名称。</span></p>
+			</td>
+		</tr><tr><td >
+			<p ><strong><span>JsArrayVariable()</span></strong></p>
+			</td>
+			<td >
+			<p ><span>返回当前</span><span>javascript</span><span>数组的名称。</span></p>
+			</td>
+		</tr><tr><td >
+			<p ><strong><span>jsClassName()</span></strong></p>
+			</td>
+			<td >
+			<p ><span>返回当前</span><span>javascript</span><span>类的名称。</span></p>
+			</td>
+		</tr><tr><td >
+			<p ><strong><span>jsComponentTypeOf()</span></strong></p>
+			</td>
+			<td >
+			<p ><span>返回当前</span><span>javascript</span><span>组件的类型。</span></p>
+			</td>
+		</tr><tr><td >
+			<p ><strong><span>jsDefineParameter</span></strong></p>
+			</td>
+			<td >
+			<p ><span>基于模块的名称，返回参数</span><span>fromdefine</span><span>（</span><span>[“module”]</span><span>、</span><span>function</span><span>（</span><span>&lt;parameter_in_question&gt;&gt;</span><span>））。</span></p>
+			</td>
+		</tr><tr><td >
+			<p ><strong><span>jsMethodName()</span></strong></p>
+			</td>
+			<td >
+			<p ><span>返回当前</span><span>javascript</span><span>方法的名称。</span></p>
+			</td>
+		</tr><tr><td >
+			<p ><strong><span>jsQualifiedClassName()</span></strong></p>
+			</td>
+			<td >
+			<p ><span>返回当前</span><span>javascript</span><span>类的完整名称。</span></p>
+			</td>
+		</tr><tr><td >
+			<p ><strong><span>jsSuggestIndexName()</span></strong></p>
+			</td>
+			<td >
+			<p ><span>返回最常用的索引变量的建议名称：</span><span>i</span><span>、</span><span>j</span><span>、</span><span>k</span><span>等。当前作用域中尚未使用的名称将首先显示。</span></p>
+			</td>
+		</tr><tr><td >
+			<p ><strong><span>jsSuggestVariableName()</span></strong></p>
+			</td>
+			<td >
+			<p ><span>根据引用变量命名规则的代码样式设置，基于变量类型和初始值设定项表达式返回变量的建议名称。</span></p>
+
+			<p >&nbsp;</p>
+
+			<p ><span>例如，如果它是一个在迭代中保存元素的变量，那么</span><span>intellij-idea</span><span>会猜测最合理的名称，并考虑到被迭代的容器的名称。</span></p>
+			</td>
+		</tr><tr><td >
+			<p ><strong><span>jsSuggestDefaultVariableKind(Boolean)</span></strong></p>
+			</td>
+			<td >
+			<p ><span>布尔参数确定当前上下文中是否允许常量。如果未指定参数，则允许使用常量。当模板展开时，将显示一个下拉列表，其中包含</span><span>typescript</span><span>和</span><span>es6</span><span>的</span><span>var</span><span>、</span><span>let</span><span>和</span><span>const</span><span>选项，以及早期</span><span>javascript</span><span>版本的一个</span><span>var</span><span>选项。</span></p>
+			</td>
+		</tr><tr><td >
+			<p ><strong><span>jsSuggestImportedEntityName()</span></strong></p>
+			</td>
+			<td >
+			<p ><span>根据文件名，将</span><span>'import*</span><span>类型的</span><span>import</span><span>语句的名称建议为</span><span>$item$from“$module$”`</span><span>或</span><span>'import$item$from“$module$”</span><span>。</span></p>
+			</td>
+		</tr><tr><td >
+			<p ><strong><span>lineCommentStart</span></strong></p>
+			</td>
+			<td >
+			<p ><span>返回在当前语言上下文中指示行注释开头的字符。</span></p>
+			</td>
+		</tr><tr><td >
+			<p ><strong><span>lineNumber()</span></strong></p>
+			</td>
+			<td >
+			<p ><span>返回当前行号。</span></p>
+			</td>
+		</tr><tr><td >
+			<p ><strong><span>lowercaseAndDash(String)</span></strong></p>
+			</td>
+			<td >
+			<p ><span>将</span><span>camelcase</span><span>字符串转换为小写，并插入</span><span>n</span><span>个破折号作为分隔符。例如，</span><span>LowerCaseandDash</span><span>（</span><span>MyExampleName</span><span>）返回我的示例名称。</span></p>
+			</td>
+		</tr><tr><td >
+			<p ><strong><span>methodName()</span></strong></p>
+			</td>
+			<td >
+			<p ><span>返回展开模板的方法的名称。</span></p>
+			</td>
+		</tr><tr><td >
+			<p ><strong><span>methodParameters()</span></strong></p>
+			</td>
+			<td >
+			<p ><span>返回展开模板的方法的参数列表。</span></p>
+			</td>
+		</tr><tr><td >
+			<p ><strong><span>methodReturnType()</span></strong></p>
+			</td>
+			<td >
+			<p ><span>返回当前方法返回的值的类型（模板在其中展开）。</span></p>
+			</td>
+		</tr><tr><td >
+			<p ><strong><span>qualifiedClassName()</span></strong></p>
+			</td>
+			<td >
+			<p ><span>返回当前类的完全限定名（在其中展开模板）。</span></p>
+			</td>
+		</tr><tr><td >
+			<p ><strong><span>rightSideType()</span></strong></p>
+			</td>
+			<td >
+			<p ><span>用右侧表达式的类型声明左侧变量。在迭代组中，它使用一个模板来生成原始类型和泛型集合。</span></p>
+			</td>
+		</tr><tr><td >
+			<p ><strong><span>snakeCase(String)</span></strong></p>
+			</td>
+			<td >
+			<p ><span>将字符串转换为蛇形大小写。例如，</span><span>snakecase</span><span>（</span><span>foo bar</span><span>）返回</span><span>foo_bar</span><span>。</span></p>
+			</td>
+		</tr><tr><td >
+			<p ><strong><span>spaceSeparated(String)</span></strong></p>
+			</td>
+			<td >
+			<p ><span>将字符串转换为小写并插入空格作为分隔符。例如，</span><span>spaceseparated</span><span>（</span><span>foo bar</span><span>）返回</span><span>foo bar</span><span>。</span></p>
+			</td>
+		</tr><tr><td >
+			<p ><strong><span>substringBefore(String,Delimiter)</span></strong></p>
+			</td>
+			<td >
+			<p ><span>删除指定分隔符后的扩展名并仅返回文件名。这有助于测试文件名（例如，</span><span>substringbefore</span><span>（</span><span>$filename$</span><span>，</span><span>“.”</span><span>）返回</span><span>component test.js</span><span>中的组件测试。</span></p>
+			</td>
+		</tr><tr><td >
+			<p ><strong><span>subtypes(sType)</span></strong></p>
+			</td>
+			<td >
+			<p ><span>返回作为参数传递的类型的子类型。</span></p>
+			</td>
+		</tr><tr><td >
+			<p ><strong><span>suggestFirstVariableName(sFirstVariableName)</span></strong></p>
+			</td>
+			<td >
+			<p ><span>不代表真的，假的，这个，超级的。</span></p>
+			</td>
+		</tr><tr><td >
+			<p ><strong><span>suggestIndexName()</span></strong></p>
+			</td>
+			<td >
+			<p ><span>建议使用最常用的索引变量的名称：</span><span>i</span><span>、</span><span>j</span><span>、</span><span>k</span><span>等（第一个不在当前范围内使用的变量）。</span></p>
+			</td>
+		</tr><tr><td >
+			<p ><strong><span>suggestVariableName()</span></strong></p>
+			</td>
+			<td >
+			<p ><span>根据引用变量命名规则的代码样式设置，基于变量类型及其初始值设定项表达式建议变量的名称。</span></p>
+
+			<p ><span>例如，如果它是一个在迭代中保存元素的变量，那么</span><span>intellij-idea</span><span>会猜测最合理的名称，并考虑到要迭代的容器的名称。</span></p>
+			</td>
+		</tr><tr><td >
+			<p ><strong><span>time(sSystemTime)</span></strong></p>
+			</td>
+			<td >
+			<p ><span>以指定格式返回当前系统时间。</span></p>
+			</td>
+		</tr><tr><td >
+			<p ><strong><span>typeOfVariable(VAR)</span></strong></p>
+			</td>
+			<td >
+			<p ><span>返回作为参数传递的变量的类型。</span></p>
+			</td>
+		</tr><tr><td >
+			<p ><strong><span>underscoresToCamelCase(String)</span></strong></p>
+			</td>
+			<td >
+			<p ><span>用作为参数传递的字符串中的</span><span>camelcase</span><span>字母替换下划线。例如，</span><span>underlinestocamelcase</span><span>（</span><span>foo_bar</span><span>）返回</span><span>foo bar</span><span>。</span></p>
+			</td>
+		</tr><tr><td >
+			<p ><strong><span>underscoresToSpaces(sParameterWithUnderscores)</span></strong></p>
+			</td>
+			<td >
+			<p ><span>用作为参数传递的字符串中的空格替换下划线。例如，</span><span>underlinestospaces</span><span>（</span><span>foo_bar</span><span>）返回</span><span>foo bar</span><span>。</span></p>
+			</td>
+		</tr><tr><td >
+			<p ><strong><span>user()</span></strong></p>
+			</td>
+			<td >
+			<p ><span>返回当前用户的名称。</span></p>
+			</td>
+		</tr><tr><td >
+			<p ><strong><span>variableOfType(&lt;type&gt;)</span></strong></p>
+			</td>
+			<td >
+			<p ><span>建议可以分配给作为参数传递的类型的所有变量，例如，</span><span>VababeLoFype</span><span>（</span><span>“java. U.L.Vector”</span><span>）。如果传递一个空字符串（</span><span>“”</span><span>）作为参数，那么函数将建议所有变量，而不管其类型如何。</span></p>
+			</td>
+		</tr></tbody></table></div>
+</body>
+</html>
