@@ -1,8 +1,5 @@
 package com.a;
 
-import org.springframework.beans.factory.BeanFactory;
-import org.springframework.beans.factory.FactoryBean;
-import org.springframework.beans.factory.config.NamedBeanHolder;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -18,16 +15,15 @@ public class Test {
 //		ClassApplicationContext.configXml();
 		//配置类的方式
 		//ClassApplicationContext.configClass();
-		AnnotationConfigApplicationContext bf = new AnnotationConfigApplicationContext(ConfigClass.class);
-		B b = bf.getBean("B", B.class);
-		System.out.println(bf.getParent());
-		System.out.println(bf.getBeanFactory());//DefaultListableBeanFactory
-		b.println();
+		ClassApplicationContext.configXml();
 		/**
 		 * NamedBeanHolder nbh  = new NamedBeanHolder("A",new A());
 		 Object beanInstance = nbh.getBeanInstance();
 		 System.out.println(beanInstance);
 		 ***/
+		/**
+		 * bean的生命周期
+		 */
 		System.out.println("end--->--------------------------------------->");
 	}
 
@@ -54,4 +50,12 @@ class ClassApplicationContext{
 		Object myConfig = applicationContext1.getBean("B");
 		System.out.println(myConfig);
 	}
+	public static void acac(){
+		AnnotationConfigApplicationContext bf = new AnnotationConfigApplicationContext(ConfigClass.class);
+		B b = bf.getBean("B", B.class);
+		System.out.println(bf.getParent());
+		System.out.println(bf.getBeanFactory());//DefaultListableBeanFactory
+		b.println();
+	}
+
 }
