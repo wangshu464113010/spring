@@ -145,6 +145,7 @@ public abstract class AnnotationConfigUtils {
 	 * @return a Set of BeanDefinitionHolders, containing all bean definitions
 	 * that have actually been registered by this call
 	 */
+	//
 	public static Set<BeanDefinitionHolder> registerAnnotationConfigProcessors(
 			BeanDefinitionRegistry registry, @Nullable Object source) {
 
@@ -159,10 +160,13 @@ public abstract class AnnotationConfigUtils {
 		}
 
 		Set<BeanDefinitionHolder> beanDefs = new LinkedHashSet<>(8);
-
+		//注册spring内置bean
 		if (!registry.containsBeanDefinition(CONFIGURATION_ANNOTATION_PROCESSOR_BEAN_NAME)) {
 			RootBeanDefinition def = new RootBeanDefinition(ConfigurationClassPostProcessor.class);
 			def.setSource(source);
+			//RootBeanDefinition是BeanDefinition的子类
+			//registerPostProcessor方法内部就是注册Bean
+			//BeanDefinition：描述Bean的，里面存放着关于Bean的一系列信息，比如Bean的作用域，Bean所对应的Class，是否懒加载，是否Primary等等
 			beanDefs.add(registerPostProcessor(registry, def, CONFIGURATION_ANNOTATION_PROCESSOR_BEAN_NAME));
 		}
 
@@ -211,6 +215,11 @@ public abstract class AnnotationConfigUtils {
 
 	private static BeanDefinitionHolder registerPostProcessor(
 			BeanDefinitionRegistry registry, RootBeanDefinition definition, String beanName) {
+		/**
+		 * BeanDefinition 设置了一个 Role，ROLE_INFRASTRUCTURE 代表这是spring内部的，
+		 * 并非用户定义的，然后又调用了 registerBeanDefinition 方法，
+		 * BeanDefinitionRegistry registry 的一个是实现类是 DefaultListableBeanFactory：
+		 */
 
 		definition.setRole(BeanDefinition.ROLE_INFRASTRUCTURE);
 		registry.registerBeanDefinition(beanName, definition);

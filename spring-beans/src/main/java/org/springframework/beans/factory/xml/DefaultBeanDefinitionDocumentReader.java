@@ -93,6 +93,13 @@ public class DefaultBeanDefinitionDocumentReader implements BeanDefinitionDocume
 	@Override
 	public void registerBeanDefinitions(Document doc, XmlReaderContext readerContext) {
 		this.readerContext = readerContext;
+		// 从 xml 根节点开始解析文件
+		/**
+		 * 经过漫长的链路，一个配置文件终于转换为一颗 DOM 树了，
+		 * 注意，这里指的是其中一个配置文件，不是所有的，读者可以看到上面有个
+		 * AbstractBeanDefinitionReader.javaloadBeanDefinitions方法 for 循环的。
+		 * 下面开始从根节点开始解析：
+		 */
 		doRegisterBeanDefinitions(doc.getDocumentElement());
 	}
 
@@ -125,6 +132,12 @@ public class DefaultBeanDefinitionDocumentReader implements BeanDefinitionDocume
 		// the new (child) delegate with a reference to the parent for fallback purposes,
 		// then ultimately reset this.delegate back to its original (parent) reference.
 		// this behavior emulates a stack of delegates without actually necessitating one.
+
+		// 我们看名字就知道，BeanDefinitionParserDelegate 必定是一个重要的类，它负责解析 Bean 定义，
+		// 这里为什么要定义一个 parent? 看到后面就知道了，是递归问题，
+		// 因为 <beans /> 内部是可以定义 <beans /> 的，所以这个方法的 root 其实不一定就是 xml 的根节点，也可以是嵌套在里面的 <beans/> 节点，
+		// 从源码分析的角度，我们当做根节点就好了
+		//2020-01-16
 		BeanDefinitionParserDelegate parent = this.delegate;
 		this.delegate = createDelegate(getReaderContext(), root, parent);
 

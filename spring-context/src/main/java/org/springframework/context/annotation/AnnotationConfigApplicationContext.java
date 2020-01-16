@@ -92,10 +92,28 @@ public class AnnotationConfigApplicationContext extends GenericApplicationContex
 	 * @param componentClasses one or more component classes &mdash; for example,
 	 * {@link Configuration @Configuration} classes
 	 */
+	//一般只会传入一个配置类。这个配置类有两种情况，一种是传统意义上的带上@Configuration注解的配置类，
+	// 还有一种是没有带上@Configuration，但是带有@Component，@Import，@ImportResouce，@Service，@ComponentScan等注解的配置类，
+	// 在Spring内部把前者称为Full配置类，把后者称之为Lite配置类。有些地方也把Lite配置类称为普通Bean。
 	public AnnotationConfigApplicationContext(Class<?>... componentClasses) {
+		/**
+		 * 调用无参构造函数，先调用父类 GenericApplicationContext 的构造函数
+		 * 父类的构造函数里面就是初始化 DefaultListableBeanFactory，并且赋值给 beanFactory
+		 * 本类的构造函数里面，初始化了一个读取器：AnnotatedBeanDefinitionReader read，一个扫描器 ClassPathBeanDefinitionScanner scanner
+		 * scanner的用处：仅是在我们外部手动调用 .scan 等方法才有用，常规方式是不会用到scanner对象的
+		 * AnnotationConfigApplicationContext{
+		 *     DefaultListableBeanFactory beanFactory
+		 *     AnnotatedBeanDefinitionReader read
+		 *     ClassPathBeanDefinitionScanner scanner
+		 * }
+		 * DefaultListableBeanFactory bean工厂，用来生产与获得bean
+		 **/
 		this();
+		/**
+		 *  把传入的类进行注册
+		 */
 		register(componentClasses);
-		refresh();
+		refresh();//刷新
 	}
 
 	/**

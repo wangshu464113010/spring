@@ -935,8 +935,18 @@ public class DefaultListableBeanFactory extends AbstractAutowireCapableBeanFacto
 			}
 			else {
 				// Still in startup registration phase
+				//beanDefinitionMap是Map<String, BeanDefinition>，这里就是把beanName作为 key，ScopedProxyMode 作为value，推到map里面
 				this.beanDefinitionMap.put(beanName, beanDefinition);
+				//beanDefinitionNames就是一个List<String>,这里就是把beanName放到List中去
+				/**DefaultListableBeanFactory 就是所谓的容器*/
 				this.beanDefinitionNames.add(beanName);
+				/**
+				 * 这里会一连串注册好几个Bean，在这其中最重要的一个Bean（没有之一）就是BeanDefinitionRegistryPostProcessor Bean。
+				 *
+				 * ConfigurationClassPostProcessor实现BeanDefinitionRegistryPostProcessor接口，
+				 * BeanDefinitionRegistryPostProcessor接口又扩展了BeanFactoryPostProcessor接口，
+				 * BeanFactoryPostProcessor是Spring的扩展点之一，ConfigurationClassPostProcessor是Spring极为重要的一个类，
+				 */
 				removeManualSingletonName(beanName);
 			}
 			this.frozenBeanDefinitionNames = null;

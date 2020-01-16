@@ -180,14 +180,15 @@ public abstract class AbstractBeanDefinitionReader implements BeanDefinitionRead
 	}
 
 
-	@Override
+	@Override// 上面虽然有两个分支，不过第二个分支很快通过解析路径转换为 Resource 以后也会进到这里
 	public int loadBeanDefinitions(Resource... resources) throws BeanDefinitionStoreException {
 		Assert.notNull(resources, "Resource array must not be null");
 		int count = 0;
 		for (Resource resource : resources) {
+			//往下看  XmlBeanDefinitionReader 类
 			count += loadBeanDefinitions(resource);
 		}
-		return count;
+		return count;  // 最后返回 counter，表示总共加载了多少的 BeanDefinition
 	}
 
 	@Override
